@@ -223,9 +223,9 @@ COLUMN_MAPPING = {
     "Property type wise Total Carpet Area supplied(in sq ft)": ["flat_carpet_area_supplied_rera_sqft", "shop_carpet_area_supplied_rera_sqft", "others_carpet_area_supplied_rera_sqft", "office_carpet_area_supplied_rera_sqft", "undefined flats_carpet_area_supplied_rera_sqft"],
     "BHK wise carpet area supplied in sqft according to RERA": ["<1bhk_carpet_area_supplied_rera_sqft", "1bhk_carpet_area_supplied_rera_sqft", "1.5bhk_carpet_area_supplied_rera_sqft", "2bhk_carpet_area_supplied_rera_sqft", "2.25bhk_carpet_area_supplied_rera_sqft", "2.5bhk_carpet_area_supplied_rera_sqft", "2.75bhk_carpet_area_supplied_rera_sqft", "3bhk_carpet_area_supplied_rera_sqft", ">3bhk_carpet_area_supplied_rera_sqft", "undefined flats_carpet_area_supplied_rera_sqft"],
     "Property Type wise Percentile Rate (Rupees per sq foot)": ["flat - 50th percentile rate", "flat - 75th percentile rate", "flat - 90th percentile rate", "office - 50th percentile rate", "others - 50th percentile rate", "shop - 50th percentile rate", "office - 75th percentile rate", "others - 75th percentile rate", "shop - 75th percentile rate", "office - 90th percentile rate", "others - 90th percentile rate", "shop - 90th percentile rate"],
-    "No of Development agreement (DA) Regiesterd and total area conveyed": ["no of da registered", "total area conveyed"],
+    "No of Development agreement (DA) Regiesterd and total area conveyed": ["no. of d.a. registered", "total area conveyed for developement"],
     "total sales in developement agreement (DA)": ["total sales"],
-    "Most prevailing rate for Development Agreement (DA)": ["total area conveyed for developement"],
+    "Most prevailing rate for Development Agreement (DA)": ["rate_range_per_sqft"],
 }
 
 def normalize_colname(name):
