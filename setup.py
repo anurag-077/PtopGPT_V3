@@ -24,7 +24,7 @@ def create_env_file():
         with open(env_file, "w") as f:
             f.write("# Environment variables for Real Estate Analyzer\n")
             f.write("# Replace with your actual OpenAI API key\n")
-            f.write("OPENAI_API_KEY=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")
+            f.write("OPENAI_API_KEY=your_openai_api_key_here\n")
         print("✅ .env file created. Please add your OpenAI API key.")
     else:
         print("✅ .env file already exists")
