@@ -76,7 +76,8 @@ CATEGORY_MAPPING = {
         "loc_lat", "loc_lng", "residential share (in %)", "commercial share (in %)",
         "others share (in %)", "residential+commercial share (in %)",
         "total projects commenced", "total no.of rera entry",
-        "total no. of blocks (based of projects)", "no. of residential projects",
+        "total no. of blocks (based of projects)",
+        "no. of residential projects",
         "no. of commercial projects", "no. of others projects", "residential+commercial",
         "no. of indusrial projects"
     ],
@@ -223,8 +224,8 @@ COLUMN_MAPPING = {
     "BHK wise carpet area supplied in sqft according to RERA": ["<1bhk_carpet_area_supplied_rera_sqft", "1bhk_carpet_area_supplied_rera_sqft", "1.5bhk_carpet_area_supplied_rera_sqft", "2bhk_carpet_area_supplied_rera_sqft", "2.25bhk_carpet_area_supplied_rera_sqft", "2.5bhk_carpet_area_supplied_rera_sqft", "2.75bhk_carpet_area_supplied_rera_sqft", "3bhk_carpet_area_supplied_rera_sqft", ">3bhk_carpet_area_supplied_rera_sqft", "undefined flats_carpet_area_supplied_rera_sqft"],
     "Property Type wise Percentile Rate (Rupees per sq foot)": ["flat - 50th percentile rate", "flat - 75th percentile rate", "flat - 90th percentile rate", "office - 50th percentile rate", "others - 50th percentile rate", "shop - 50th percentile rate", "office - 75th percentile rate", "others - 75th percentile rate", "shop - 75th percentile rate", "office - 90th percentile rate", "others - 90th percentile rate", "shop - 90th percentile rate"],
     "No of Development agreement (DA) Regiesterd and total area conveyed": ["no of da registered", "total area conveyed"],
-    "total sales in developement agreement (DA)": ["total sales in da"],
-    "Most prevailing rate for Development Agreement (DA)": ["most prevailing rate for da"],
+    "total sales in developement agreement (DA)": ["total sales"],
+    "Most prevailing rate for Development Agreement (DA)": ["total area conveyed for developement"],
 }
 
 def normalize_colname(name):
@@ -370,7 +371,7 @@ try:
         temperature=0.1,
         max_tokens=8000,
         max_retries=3,
-        api_key="your_openai_api_key"
+        api_key="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"
     )
     logger.info("OpenAI gpt-4o-mini LLM initialized")
 except Exception as e:
@@ -488,6 +489,7 @@ def compare_villages(request):
             response = llm.invoke(formatted_prompt)
             response_text = response.content if hasattr(response, 'content') else str(response)
             output_tokens = count_tokens(response_text)
+            
             return JsonResponse({
                 'analysis': response_text,
                 'tokens': {
